@@ -1,0 +1,23 @@
+{
+  "name": "@e3m-io/batch-fn-calls",
+  "version": "1.0.0",
+  "author": "e3m-io",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/e3m-io/batch-fn-calls.git"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "prepare": "tsc --project src/tsconfig.json --outDir dist"
+  },
+  "packageManager": "pnpm@8.15.3",
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.2"
+  }
+}
