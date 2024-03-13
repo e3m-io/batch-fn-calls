@@ -5,13 +5,16 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/e3m-io/batch-fn-calls.git"
+    "url": "git+https://github.com/e3m-io/batch-fn-calls.git"
   },
   "type": "module",
   "main": "./dist/index.js",
   "exports": {
     ".": "./dist/index.js"
   },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepare": "tsc --project src/tsconfig.json --outDir dist"
   },
