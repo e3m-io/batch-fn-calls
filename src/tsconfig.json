@@ -1,8 +1,15 @@
 {
+  "exclude": ["*.test.ts"],
   "compilerOptions": {
     "composite": true,
+    "isolatedModules": true,
     "lib": ["DOM", "ES2015"],
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
     "strict": true,
-    "target": "ES2019"
+    "target": "ES2019",
+    "verbatimModuleSyntax": true
   }
 }

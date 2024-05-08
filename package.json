@@ -16,7 +16,8 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "tsc --project src/tsconfig.json --outDir dist"
+    "prepare": "tsc --project src/tsconfig.json --outDir dist",
+    "test": "bun test"
   },
   "packageManager": "pnpm@8.15.3",
   "devDependencies": {
