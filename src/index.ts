@@ -10,11 +10,11 @@ export const batch = <K, T>(applyBatch: CollectBatchFn<K, T>) => {
     if (!p) {
       p = new Promise((resolve) => {
         setTimeout(() => {
-          applyBatch(keys).then((result) => {
-            p = null;
-            keys = new Set();
+          p = null;
+          applyBatch(new Set(keys)).then((result) => {
             resolve(result);
           });
+          keys = new Set();
         });
       });
     }
