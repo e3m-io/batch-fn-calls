@@ -16,7 +16,7 @@
     "dist"
   ],
   "scripts": {
-    "prepare": "tsc --project src/tsconfig.json --outDir dist && shx cp ./dist/index.js ./dist/index.mjs",
+    "prepare": "tsc --project src/tsconfig.json --outDir dist && shx cp ./dist/index.js ./dist/index.mjs && shx cp ./dist/index.d.ts ./dist/index.d.mts",
     "test": "bun test"
   },
   "packageManager": "pnpm@8.15.3",
