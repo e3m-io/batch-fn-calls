@@ -8,20 +8,21 @@
     "url": "git+https://github.com/e3m-io/batch-fn-calls.git"
   },
   "type": "module",
-  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.mjs"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "prepare": "tsc --project src/tsconfig.json --outDir dist",
+    "prepare": "tsc --project src/tsconfig.json --outDir dist && shx cp ./dist/index.js ./dist/index.mjs",
     "test": "bun test"
   },
   "packageManager": "pnpm@8.15.3",
   "devDependencies": {
     "prettier": "^3.2.5",
+    "shx": "^0.3.4",
     "typescript": "^5.4.2"
   }
 }
