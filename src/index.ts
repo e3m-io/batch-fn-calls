@@ -8,13 +8,16 @@ export const batch = <K, T>(applyBatch: CollectBatchFn<K, T>) => {
     keys.add(key);
 
     if (!p) {
-      p = new Promise((resolve) => {
-        setTimeout(() => {
+      p = new Promise((resolve, reject) => {
+        setTimeout(async () => {
           p = null;
-          applyBatch(new Set(keys)).then((result) => {
-            resolve(result);
-          });
+          const savedKeys = new Set(keys);
           keys = new Set();
+          try {
+            resolve(await applyBatch(savedKeys));
+          } catch (e) {
+            reject(e);
+          }
         });
       });
     }

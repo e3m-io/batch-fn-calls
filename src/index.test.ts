@@ -35,3 +35,11 @@ test("getId returns expected content", async () => {
   const result = await getId("1");
   expect(result).toEqual({ id: "1" });
 });
+
+test("batch throws the error thrown by the bulk fn", async () => {
+  const getId = batch(() => {
+    throw new Error("failed_to_fetch");
+  });
+
+  await expect(getId("1")).rejects.toThrow("failed_to_fetch");
+});
